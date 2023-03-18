@@ -1,10 +1,10 @@
 import React from 'react';
 import Product from '../components/Product';
-import '../scss/sections/Listing.scss';
+import '../scss/sections/Products.scss';
 import { products } from '../constants';
 import Button from '../components/UI/Button';
 
-const Listing: React.FC = () => {
+const Products: React.FC = () => {
   return (
     <div className="listing">
       <h2 className="listing__title">New Ceramics</h2>
@@ -18,11 +18,12 @@ const Listing: React.FC = () => {
       </div>
       <Button
         text="View collection"
-        styles="light"
+        color="#2A254B"
+        background="#F9F9F9"
         className="listing__button"
       />
     </div>
   );
 };
 
-export default Listing;
+export default Products;

@@ -21,7 +21,8 @@ const Hero: React.FC = () => {
           </p>
           <Button
             text="View collection"
-            styles="light"
+            color="#2A254B"
+            background="#F9F9F9"
             className="block__button"
           />
         </div>

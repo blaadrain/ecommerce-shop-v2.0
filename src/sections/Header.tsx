@@ -1,6 +1,6 @@
 import React from 'react';
 import '../scss/sections/Header.scss';
-import { headerLinks } from '../constants';
+import { categories } from '../constants';
 
 const Header: React.FC = () => {
   return (
@@ -25,12 +25,12 @@ const Header: React.FC = () => {
       </div>
       <div className="header__bottom">
         <div className="header__links">
-          {headerLinks.map((link, index) => (
+          {categories.map((category, index) => (
             <a
               key={index}
               className="header__link"
             >
-              {link}
+              {category}
             </a>
           ))}
         </div>

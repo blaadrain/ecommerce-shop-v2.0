@@ -1,14 +1,20 @@
 import React from 'react';
 import Hero from '../sections/Hero';
 import Features from '../sections/Features';
-import Listing from '../sections/Listing';
+import Products from '../sections/Products';
+import SignUp from '../sections/SignUp';
+import About from '../sections/About';
+import Footer from '../sections/Footer';
 
 const HomePage: React.FC = () => {
   return (
     <>
       <Hero />
       <Features />
-      <Listing />
+      <Products />
+      <SignUp />
+      <About />
+      <Footer />
     </>
   );
 };

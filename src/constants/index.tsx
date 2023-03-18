@@ -10,7 +10,7 @@ export type Product = {
   price: number;
 };
 
-export const headerLinks: string[] = [
+export const categories: string[] = [
   'Plant pots',
   'Ceramics',
   'Tables',
@@ -45,23 +45,48 @@ export const features: Feature[] = [
 
 export const products: Product[] = [
   {
-    imgUrl: '/images/product/product01.jpg',
+    imgUrl: '/images/products/product01.jpg',
     title: 'The Dandy Chair',
     price: 250,
   },
   {
-    imgUrl: '/images/product/product02.jpg',
+    imgUrl: '/images/products/product02.jpg',
     title: 'Rustic Vase Set',
     price: 155,
   },
   {
-    imgUrl: '/images/product/product03.jpg',
+    imgUrl: '/images/products/product03.jpg',
     title: 'The Silky Vase',
     price: 125,
   },
   {
-    imgUrl: '/images/product/product04.jpg',
+    imgUrl: '/images/products/product04.jpg',
     title: 'The Lucy Lamp',
     price: 300,
   },
+];
+
+export const footerIcons: string[] = [
+  '/images/footer/linkedin.svg',
+  '/images/footer/facebook.svg',
+  '/images/footer/instagram.svg',
+  '/images/footer/skype.svg',
+  '/images/footer/twitter.svg',
+  '/images/footer/pinterest.svg',
+];
+
+export const menu: string[] = [
+  'New arrivals',
+  'Best sellers',
+  'Recently viewed',
+  'Popular this week',
+  'All products',
+];
+
+export const info: string[] = [
+  'About us',
+  'Vacancies',
+  'Contact us',
+  'Privacy',
+  'Returns policy',
 ];
