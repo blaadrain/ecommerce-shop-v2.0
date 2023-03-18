@@ -7,18 +7,18 @@ const Header: React.FC = () => {
     <header className="header">
       <div className="header__top">
         <img
-          src="icons/header/search.svg"
+          src="images/header/search.svg"
           alt="Search"
           className="header__search"
         />
         <h2 className="header__title">Avion</h2>
         <img
-          src="icons/header/cart.svg"
+          src="images/header/cart.svg"
           alt="Cart"
           className="header__cart"
         />
         <img
-          src="icons/header/menu.svg"
+          src="images/header/menu.svg"
           alt="header__menu"
           className="header__menu"
         />

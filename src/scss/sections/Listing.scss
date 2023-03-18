@@ -1,0 +1,46 @@
+@import '../variables.scss';
+
+.listing {
+  margin: 40px 80px;
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    text-align: center;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 140%;
+  }
+
+  &__items {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px 20px;
+
+    @media (max-width: $lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: $md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: $sm) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__button {
+    margin-top: 35px;
+    align-self: center;
+
+    @media (max-width: $sm) {
+      align-self: stretch;
+    }
+  }
+
+  @media (max-width: $md) {
+    margin: 20px 30px;
+  }
+}
