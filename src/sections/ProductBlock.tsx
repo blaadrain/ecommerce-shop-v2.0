@@ -25,30 +25,38 @@ const ProductBlock: React.FC = () => {
     }
 
     fetchProduct();
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [id]);
 
   if (!product) return <Loader />;
 
   return (
     <div className="product-block">
-      <img
-        src={product.imgUrl}
-        className="product-block__img"
-      />
-      <div className="product-block__content">
-        <div className="product-block__container">
-          <h2 className="product-block__title">{product.title}</h2>
-          <h3 className="product-block__price">£{product.price}</h3>
-          <p className="product-block__description">{product.description}</p>
-          <Button
-            text="Add to cart"
-            color="#FFF"
-            background="#2A254B"
-            className="product-block__btn"
+      {product.id === id ? (
+        <>
+          <img
+            src={product.imgUrl}
+            className="product-block__img"
           />
-        </div>
-      </div>
+          <div className="product-block__content">
+            <div className="product-block__container">
+              <h2 className="product-block__title">{product.title}</h2>
+              <h3 className="product-block__price">£{product.price}</h3>
+              <p className="product-block__description">
+                {product.description}
+              </p>
+              <Button
+                text="Add to cart"
+                color="#FFF"
+                background="#2A254B"
+                className="product-block__btn"
+              />
+            </div>
+          </div>
+        </>
+      ) : (
+        <Loader />
+      )}
     </div>
   );
 };
