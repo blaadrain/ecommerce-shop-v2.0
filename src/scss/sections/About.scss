@@ -6,7 +6,7 @@
 
   &__content {
     @media (max-width: $md) {
-      order: 10;
+      order: 1 !important;
     }
   }
 
@@ -58,7 +58,6 @@
   &__button {
     color: #505977;
     margin-top: auto;
-    align-self: flex-start;
 
     @media (max-width: $md) {
       margin-top: 35px;

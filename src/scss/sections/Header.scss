@@ -27,9 +27,39 @@
     font-size: 24px;
     line-height: 30px;
     justify-self: center;
+    transition: all 0.3s ease-out 0s;
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      color: #000;
+      border-color: #000;
+    }
 
     @media (max-width: $sm) {
       justify-self: start;
+    }
+  }
+
+  &__navbar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__about {
+    font-family: $satoshi;
+    color: #726e8d;
+    margin-right: 24px;
+    transition: all 0.3s ease-out 0s;
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      color: #000;
+      border-color: #000;
+    }
+
+    @media (max-width: $sm) {
+      display: none;
     }
   }
 

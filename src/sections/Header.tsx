@@ -7,27 +7,35 @@ const Header: React.FC = () => {
   return (
     <header className="header">
       <div className="header__top">
-        <img
-          src="images/header/search.svg"
-          alt="Search"
-          className="header__search"
-        />
         <Link
           to="/"
           className="header__title"
         >
           Avion
         </Link>
-        <img
-          src="images/header/cart.svg"
-          alt="Cart"
-          className="header__cart"
-        />
-        <img
-          src="images/header/menu.svg"
-          alt="header__menu"
-          className="header__menu"
-        />
+        <nav className="header__navbar">
+          <Link
+            to="/about"
+            className="header__about"
+          >
+            About us
+          </Link>
+          <img
+            src="images/header/search.svg"
+            alt="Search"
+            className="header__search"
+          />
+          <img
+            src="images/header/cart.svg"
+            alt="Cart"
+            className="header__cart"
+          />
+          <img
+            src="images/header/menu.svg"
+            alt="header__menu"
+            className="header__menu"
+          />
+        </nav>
       </div>
       <div className="header__bottom">
         <div className="header__links">

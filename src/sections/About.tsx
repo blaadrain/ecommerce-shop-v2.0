@@ -4,23 +4,35 @@ import '../scss/sections/About.scss';
 
 type AboutProps = {
   title: string;
+  text: string;
+  extraText?: string;
+  order: 'default' | 'reversed';
+  imgUrl: string;
 };
 
-const About: React.FC<AboutProps> = ({ title }) => {
+const About: React.FC<AboutProps> = ({
+  title,
+  text,
+  extraText,
+  order,
+  imgUrl,
+}) => {
   return (
     <div className="about">
-      <div className="about__content">
-        <div className="about__container">
+      <div
+        className="about__content"
+        style={{ order: order === 'default' ? -1 : 1 }}
+      >
+        <div
+          className="about__container"
+          style={{
+            textAlign: order === 'default' ? 'left' : 'right',
+            alignItems: order === 'default' ? 'start' : 'end',
+          }}
+        >
           <h3 className="about__title">{title}</h3>
-          <p className="about__text">
-            When we started Avion, the idea was simple. Make high quality
-            furniture affordable and available for the mass market.
-          </p>
-          <p className="about__text--second">
-            Handmade, and lovingly crafted furniture and homeware is what we
-            live, breathe and design so our Chelsea boutique become the hotbed
-            for the London interior design community.
-          </p>
+          <p className="about__text">{text}</p>
+          <p className="about__text--second">{extraText}</p>
           <Button
             text="Get in touch"
             color="#2a254b"
@@ -30,7 +42,7 @@ const About: React.FC<AboutProps> = ({ title }) => {
         </div>
       </div>
       <img
-        src="/images/about/about.jpg"
+        src={imgUrl}
         className="about__img"
       />
     </div>
