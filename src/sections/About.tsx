@@ -2,14 +2,16 @@ import React from 'react';
 import Button from '../components/UI/Button';
 import '../scss/sections/About.scss';
 
-const About: React.FC = () => {
+type AboutProps = {
+  title: string;
+};
+
+const About: React.FC<AboutProps> = ({ title }) => {
   return (
     <div className="about">
       <div className="about__content">
         <div className="about__container">
-          <h3 className="about__title">
-            From a studio in London to a global brand with over 400 outlets
-          </h3>
+          <h3 className="about__title">{title}</h3>
           <p className="about__text">
             When we started Avion, the idea was simple. Make high quality
             furniture affordable and available for the mass market.

@@ -4,7 +4,6 @@ import Features from '../sections/Features';
 import Products from '../sections/Products';
 import SignUp from '../sections/SignUp';
 import About from '../sections/About';
-import Footer from '../sections/Footer';
 
 const HomePage: React.FC = () => {
   return (
@@ -13,8 +12,7 @@ const HomePage: React.FC = () => {
       <Features />
       <Products />
       <SignUp />
-      <About />
-      <Footer />
+      <About title="From a studio in London to a global brand with over 400 outlets" />
     </>
   );
 };

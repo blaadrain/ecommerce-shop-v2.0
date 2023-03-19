@@ -18,6 +18,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   color: $primary-dark;
+  min-height: 100vh;
 }
 
 a,
@@ -61,6 +62,10 @@ input {
   &:focus {
     filter: brightness(95%);
   }
+}
+
+#root {
+  height: 100vh;
 }
 
 @mixin noselect {

@@ -4,6 +4,8 @@ import React from 'react';
 import { Routes, Route } from 'react-router';
 import Default from './layouts/Default';
 import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import NotFoundPage from './pages/NotFoundPage';
 
 const App: React.FC = () => {
   return (
@@ -17,8 +19,12 @@ const App: React.FC = () => {
           element={<HomePage />}
         />
         <Route
+          path="about"
+          element={<AboutPage />}
+        />
+        <Route
           path="*"
-          element={<></>}
+          element={<NotFoundPage />}
         />
       </Route>
     </Routes>

@@ -1,6 +1,7 @@
 import React from 'react';
 import '../scss/sections/Header.scss';
 import { categories } from '../constants';
+import { Link } from 'react-router-dom';
 
 const Header: React.FC = () => {
   return (
@@ -11,7 +12,12 @@ const Header: React.FC = () => {
           alt="Search"
           className="header__search"
         />
-        <h2 className="header__title">Avion</h2>
+        <Link
+          to="/"
+          className="header__title"
+        >
+          Avion
+        </Link>
         <img
           src="images/header/cart.svg"
           alt="Cart"
