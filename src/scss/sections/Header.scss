@@ -11,9 +11,11 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
 
-  &__search {
+  &__search,
+  &__cart {
     width: 24px;
     height: 24px;
+    cursor: pointer;
 
     @media (max-width: $sm) {
       display: none;
@@ -28,14 +30,6 @@
 
     @media (max-width: $sm) {
       justify-self: start;
-    }
-  }
-
-  &__cart {
-    width: 24px;
-    height: 24px;
-    @media (max-width: $sm) {
-      display: none;
     }
   }
 
@@ -72,5 +66,13 @@
     font-size: 16px;
     line-height: 22px;
     color: $gray;
+    cursor: pointer;
+    transition: all 0.3s ease-out 0s;
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      color: #000;
+      border-color: #000;
+    }
   }
 }

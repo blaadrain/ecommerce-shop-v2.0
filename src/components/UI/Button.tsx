@@ -19,6 +19,7 @@ const Button: React.FC<ButtonProps> = ({
     lineHeight: '150%',
     padding: '16px 32px',
     minWidth: '120px',
+    cursor: 'pointer',
     color,
     background,
   };

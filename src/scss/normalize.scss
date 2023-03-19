@@ -48,6 +48,19 @@ a {
 
 button {
   border: none;
+  transition: all 0.3s ease 0s;
+
+  &:hover {
+    filter: brightness(80%);
+  }
+}
+
+input {
+  transition: all 0.3s ease 0s;
+
+  &:focus {
+    filter: brightness(95%);
+  }
 }
 
 @mixin noselect {

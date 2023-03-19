@@ -4,22 +4,6 @@ export type Feature = {
   text: string;
 };
 
-export type Product = {
-  imgUrl: string;
-  title: string;
-  price: number;
-};
-
-export const categories: string[] = [
-  'Plant pots',
-  'Ceramics',
-  'Tables',
-  'Chairs',
-  'Crockery',
-  'Tableware',
-  'Cultery',
-];
-
 export const features: Feature[] = [
   {
     imgUrl: '/images/features/delivery.svg',
@@ -43,27 +27,14 @@ export const features: Feature[] = [
   },
 ];
 
-export const products: Product[] = [
-  {
-    imgUrl: '/images/products/product01.jpg',
-    title: 'The Dandy Chair',
-    price: 250,
-  },
-  {
-    imgUrl: '/images/products/product02.jpg',
-    title: 'Rustic Vase Set',
-    price: 155,
-  },
-  {
-    imgUrl: '/images/products/product03.jpg',
-    title: 'The Silky Vase',
-    price: 125,
-  },
-  {
-    imgUrl: '/images/products/product04.jpg',
-    title: 'The Lucy Lamp',
-    price: 300,
-  },
+export const categories: string[] = [
+  'Plant pots',
+  'Ceramics',
+  'Tables',
+  'Chairs',
+  'Crockery',
+  'Tableware',
+  'Cultery',
 ];
 
 export const footerIcons: string[] = [
