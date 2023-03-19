@@ -15,15 +15,15 @@ const App: React.FC = () => {
         element={<Default />}
       >
         <Route
-          path=""
+          path="/"
           element={<HomePage />}
         />
         <Route
-          path="about"
+          path="/about"
           element={<AboutPage />}
         />
         <Route
-          path="*"
+          path="/*"
           element={<NotFoundPage />}
         />
       </Route>
