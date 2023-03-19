@@ -11,7 +11,7 @@ const HomePage: React.FC = () => {
     <>
       <Hero />
       <Features />
-      <Products />
+      <Products title="New Arrivals" />
       <SignUp />
       <About
         title="From a studio in London to a global brand with over 400 outlets"

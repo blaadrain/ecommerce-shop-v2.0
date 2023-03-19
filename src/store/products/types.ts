@@ -5,6 +5,7 @@ export enum Status {
 }
 
 export type Product = {
+  id: string;
   imgUrl: string;
   title: string;
   price: number;

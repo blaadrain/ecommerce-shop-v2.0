@@ -10,7 +10,11 @@ import { fetchProducts } from '../store/products/slice';
 import { selectProducts } from '../store/products/selectors';
 import { useAppDispatch } from '../store/store';
 
-const Products: React.FC = () => {
+type ProductsProps = {
+  title: string;
+};
+
+const Products: React.FC<ProductsProps> = ({ title }) => {
   const dispatch = useAppDispatch();
   const { items, status } = useSelector(selectProducts);
 
@@ -20,14 +24,14 @@ const Products: React.FC = () => {
 
   const products = items.map((product: Product, index: number) => (
     <Product
-      key={index}
+      key={product.id}
       {...product}
     />
   ));
 
   return (
     <div className="listing">
-      <h2 className="listing__title">New Arrivals</h2>
+      <h2 className="listing__title">{title}</h2>
       {status === 'loading' ? (
         <Loader />
       ) : status === 'error' ? (
