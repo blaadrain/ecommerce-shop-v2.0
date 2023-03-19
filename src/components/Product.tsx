@@ -1,6 +1,6 @@
 import React from 'react';
 import '../scss/components/Product.scss';
-import { Product } from '../constants';
+import { Product } from '../store/products/types';
 
 const Product: React.FC<Product> = ({ imgUrl, title, price }) => {
   return (
