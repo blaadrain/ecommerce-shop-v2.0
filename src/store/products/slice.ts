@@ -1,15 +1,17 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { shuffle } from '../../utils/shuffle';
 import { Product, ProductsSliceState, Status } from './types';
 
-export const fetchProducts = createAsyncThunk<Product[]>(
+export const fetchProducts = createAsyncThunk<Product[], boolean | undefined>(
   'products/fetchProducts',
-  async () => {
+  async (shuffled) => {
     const { data } = await axios.get<Product[]>(
       'https://6403a6883bdc59fa8f2a61db.mockapi.io/products'
     );
 
-    return data;
+    if (shuffled) return shuffle([...data]);
+    else return data;
   }
 );
 
@@ -21,7 +23,11 @@ const initialState: ProductsSliceState = {
 const productsSlice = createSlice({
   name: 'products',
   initialState,
-  reducers: {},
+  reducers: {
+    setItems(state, action: PayloadAction<Product[]>) {
+      state.items = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchProducts.pending, (state) => {
       state.items = [];
@@ -40,5 +46,7 @@ const productsSlice = createSlice({
     });
   },
 });
+
+export const { setItems } = productsSlice.actions;
 
 export default productsSlice.reducer;

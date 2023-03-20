@@ -1,7 +1,7 @@
 @import '../variables.scss';
 
-.listing {
-  margin: 40px 80px;
+.products {
+  margin: 40px 80px 80px;
   display: flex;
   flex-direction: column;
 
@@ -13,10 +13,10 @@
   }
 
   &__items {
-    margin-top: 30px;
+    margin: 50px 0 30px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 40px 20px;
+    gap: 40px 30px;
 
     @media (max-width: $lg) {
       grid-template-columns: repeat(3, 1fr);
@@ -27,13 +27,17 @@
     }
   }
 
-  &__button {
+  &__link {
     margin-top: 35px;
     align-self: center;
 
     @media (max-width: $sm) {
       align-self: stretch;
     }
+  }
+
+  &__button {
+    width: 100%;
   }
 
   @media (max-width: $md) {

@@ -86,13 +86,9 @@
     }
   }
 
-  &__button {
+  &__link {
     align-self: start;
     margin-top: auto;
-
-    &:hover {
-      background-color: aqua;
-    }
 
     @media (max-width: $md) {
       margin-top: 30px;
@@ -101,6 +97,12 @@
 
     @media (max-width: $sm) {
       width: 100%;
+    }
+  }
+
+  &__button {
+    &:hover {
+      background-color: aqua;
     }
   }
 }

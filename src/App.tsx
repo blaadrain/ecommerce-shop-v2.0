@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import NotFoundPage from './pages/NotFoundPage';
 import ProductPage from './pages/ProductPage';
+import ProductsPage from './pages/ProductsPage';
 
 const App: React.FC = () => {
   const { pathname } = useLocation();
@@ -24,6 +25,10 @@ const App: React.FC = () => {
         <Route
           path=""
           element={<HomePage />}
+        />
+        <Route
+          path="products"
+          element={<ProductsPage />}
         />
         <Route
           path="product/:id"

@@ -8,7 +8,10 @@ import SignUp from '../sections/SignUp';
 const AboutPage: React.FC = () => {
   return (
     <>
-      <Heading />
+      <Heading
+        text="A brand built on the love of craftmanship,
+        quality and outstanding customer service"
+      />
       <About
         title="From a studio in London to a global brand with over 400 outlets"
         text="When we started Avion, the idea was simple. Make high quality
@@ -18,6 +21,7 @@ const AboutPage: React.FC = () => {
         for the London interior design community."
         order="default"
         imgUrl="/images/about/01.jpg"
+        element="button"
       />
       <About
         title="Our service isn’t just personal, it’s actually
@@ -28,6 +32,7 @@ const AboutPage: React.FC = () => {
         Earth for years to come."
         order="reversed"
         imgUrl="/images/about/02.jpg"
+        element="button"
       />
       <Features />
       <SignUp />

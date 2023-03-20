@@ -11,7 +11,12 @@ const HomePage: React.FC = () => {
     <>
       <Hero />
       <Features />
-      <Products title="New Arrivals" />
+      <Products
+        title="New Arrivals"
+        limit={4}
+        shuffled={true}
+        hasButton={true}
+      />
       <SignUp />
       <About
         title="From a studio in London to a global brand with over 400 outlets"
@@ -22,6 +27,7 @@ const HomePage: React.FC = () => {
         for the London interior design community."
         order="default"
         imgUrl="/images/about/01.jpg"
+        element="button"
       />
     </>
   );

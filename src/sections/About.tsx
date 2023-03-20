@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '../components/UI/Button';
+import Input from '../components/UI/Input';
 import '../scss/sections/About.scss';
 
 type AboutProps = {
@@ -8,6 +9,7 @@ type AboutProps = {
   extraText?: string;
   order: 'default' | 'reversed';
   imgUrl: string;
+  element: 'button' | 'input';
 };
 
 const About: React.FC<AboutProps> = ({
@@ -16,6 +18,7 @@ const About: React.FC<AboutProps> = ({
   extraText,
   order,
   imgUrl,
+  element,
 }) => {
   return (
     <div className="about">
@@ -33,12 +36,24 @@ const About: React.FC<AboutProps> = ({
           <h3 className="about__title">{title}</h3>
           <p className="about__text">{text}</p>
           <p className="about__text--second">{extraText}</p>
-          <Button
-            text="Get in touch"
-            color="#2a254b"
-            background="#f9f9f9"
-            className="about__button"
-          />
+          {element === 'button' ? (
+            <Button
+              text="Get in touch"
+              color="#2a254b"
+              background="#f9f9f9"
+              className="about__button"
+            />
+          ) : (
+            <Input
+              text="your@gmail.com"
+              color="#000000"
+              background="#F9F9F9"
+              textButton="Sign up"
+              colorButton="#FFFFFF"
+              backgroundButton="#2a254b"
+              className="about__input"
+            />
+          )}
         </div>
       </div>
       <img

@@ -46,7 +46,8 @@
     gap: 16px;
   }
 
-  &__about {
+  &__about,
+  &__products {
     font-family: $satoshi;
     color: #726e8d;
     margin-right: 24px;

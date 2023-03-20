@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from '../components/UI/Button';
 import '../scss/sections/Hero.scss';
+import { Link } from 'react-router-dom';
 
 const Hero: React.FC = () => {
   return (
@@ -19,12 +20,17 @@ const Hero: React.FC = () => {
             With our new collection, view over 400 bespoke pieces from homeware
             through to furniture today
           </p>
-          <Button
-            text="View collection"
-            color="#2A254B"
-            background="#F9F9F9"
-            className="block__button"
-          />
+          <Link
+            to="/products"
+            className="block__link"
+          >
+            <Button
+              text="View collection"
+              color="#2A254B"
+              background="#F9F9F9"
+              className="block__button"
+            />
+          </Link>
         </div>
       </div>
     </section>

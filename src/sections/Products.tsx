@@ -9,42 +9,69 @@ import { useSelector } from 'react-redux';
 import { fetchProducts } from '../store/products/slice';
 import { selectProducts } from '../store/products/selectors';
 import { useAppDispatch } from '../store/store';
+import { Link } from 'react-router-dom';
+import { shuffle } from '../utils/shuffle';
 
 type ProductsProps = {
-  title: string;
+  title?: string;
+  limit?: number;
+  hasButton?: boolean;
+  shuffled?: boolean;
+  currendProductId?: string;
 };
 
-const Products: React.FC<ProductsProps> = ({ title }) => {
+const Products: React.FC<ProductsProps> = ({
+  title,
+  hasButton,
+  shuffled,
+  limit,
+  currendProductId,
+}) => {
   const dispatch = useAppDispatch();
   const { items, status } = useSelector(selectProducts);
+  let productsCount = 0;
 
   React.useEffect(() => {
-    dispatch(fetchProducts());
+    dispatch(fetchProducts(shuffled));
   }, []);
 
-  const products = items.map((product: Product, index: number) => (
-    <Product
-      key={product.id}
-      {...product}
-    />
-  ));
+  const productsItem = items.map((product: Product, index: number) => {
+    if (currendProductId === product.id) return false;
+    if (limit && productsCount >= limit) return false;
+
+    productsCount++;
+
+    return (
+      <Product
+        key={product.id}
+        {...product}
+      />
+    );
+  });
 
   return (
-    <div className="listing">
-      <h2 className="listing__title">{title}</h2>
+    <div className="products">
+      {title && <h2 className="products__title">{title}</h2>}
       {status === 'loading' ? (
         <Loader />
       ) : status === 'error' ? (
         <div className="loader">Some error occured while loading.</div>
       ) : (
-        <div className="listing__items">{products}</div>
+        <div className="products__items">{productsItem}</div>
       )}
-      <Button
-        text="View collection"
-        color="#2A254B"
-        background="#F9F9F9"
-        className="listing__button"
-      />
+      {hasButton && (
+        <Link
+          to="/products"
+          className="products__link"
+        >
+          <Button
+            text="View collection"
+            color="#2A254B"
+            background="#F9F9F9"
+            className="products__button"
+          />
+        </Link>
+      )}
     </div>
   );
 };

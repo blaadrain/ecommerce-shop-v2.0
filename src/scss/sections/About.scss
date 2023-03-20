@@ -68,6 +68,24 @@
     }
   }
 
+  &__input {
+    display: flex;
+    margin-top: auto;
+
+    @media (max-width: $md) {
+      margin-top: 35px;
+    }
+
+    @media (max-width: $sm) {
+      width: 100%;
+      flex-direction: column;
+
+      & > button {
+        margin-top: 15px;
+      }
+    }
+  }
+
   &__img {
     width: 100%;
     object-fit: cover;
