@@ -9,8 +9,8 @@ import { useSelector } from 'react-redux';
 import { fetchProducts } from '../store/products/slice';
 import { selectProducts } from '../store/products/selectors';
 import { useAppDispatch } from '../store/store';
-import { Link } from 'react-router-dom';
-import { shuffle } from '../utils/shuffle';
+import { Link, useParams } from 'react-router-dom';
+import { selectFilters } from '../store/filters/selectors';
 
 type ProductsProps = {
   title?: string;
@@ -29,11 +29,20 @@ const Products: React.FC<ProductsProps> = ({
 }) => {
   const dispatch = useAppDispatch();
   const { items, status } = useSelector(selectProducts);
+  const { category, sortingType } = useSelector(selectFilters);
+  const { id } = useParams();
   let productsCount = 0;
 
   React.useEffect(() => {
-    dispatch(fetchProducts(shuffled));
-  }, []);
+    const categoryParam =
+      category !== 'All' ? `category=${category.toLowerCase()}` : '';
+    const sortingParam = sortingType
+      ? `sortBy=${sortingType.toLowerCase()}`
+      : '';
+    const params = { args: `?${categoryParam}&${sortingParam}`, shuffled };
+
+    dispatch(fetchProducts(params));
+  }, [category, sortingType, id]);
 
   const productsItem = items.map((product: Product, index: number) => {
     if (currendProductId === product.id) return false;

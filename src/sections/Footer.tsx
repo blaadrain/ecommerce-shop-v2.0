@@ -21,14 +21,17 @@ const Footer: React.FC = () => {
           </ul>
           <ul className="footer__categories">
             <li className="categories__title">Categories</li>
-            {categories.map((item, index) => (
-              <li
-                key={index}
-                className="item"
-              >
-                {item}
-              </li>
-            ))}
+            {categories.map((item, index) => {
+              if (item !== 'All')
+                return (
+                  <li
+                    key={index}
+                    className="item"
+                  >
+                    {item}
+                  </li>
+                );
+            })}
           </ul>
           <ul className="footer__info">
             <li className="info__title">Our company</li>

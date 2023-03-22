@@ -45,14 +45,17 @@ const Header: React.FC = () => {
       </div>
       <div className="header__bottom">
         <div className="header__links">
-          {categories.map((category, index) => (
-            <a
-              key={index}
-              className="header__link"
-            >
-              {category}
-            </a>
-          ))}
+          {categories.map((item, index) => {
+            if (item !== 'All')
+              return (
+                <li
+                  key={index}
+                  className="header__link"
+                >
+                  {item}
+                </li>
+              );
+          })}
         </div>
       </div>
     </header>

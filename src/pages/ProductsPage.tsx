@@ -8,7 +8,7 @@ const ProductsPage: React.FC = () => {
   return (
     <>
       {/* <Heading text="View all products" /> */}
-      {/* <Filters /> */}
+      <Filters />
       <Products />
       <About
         title="Join the club and get the benefits"

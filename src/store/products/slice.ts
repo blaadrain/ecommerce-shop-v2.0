@@ -3,14 +3,19 @@ import axios from 'axios';
 import { shuffle } from '../../utils/shuffle';
 import { Product, ProductsSliceState, Status } from './types';
 
-export const fetchProducts = createAsyncThunk<Product[], boolean | undefined>(
+type FetchParams = {
+  args: string;
+  shuffled: boolean | undefined;
+};
+
+export const fetchProducts = createAsyncThunk(
   'products/fetchProducts',
-  async (shuffled) => {
+  async (params: FetchParams) => {
     const { data } = await axios.get<Product[]>(
-      'https://6403a6883bdc59fa8f2a61db.mockapi.io/products'
+      `https://6403a6883bdc59fa8f2a61db.mockapi.io/products${params.args}`
     );
 
-    if (shuffled) return shuffle([...data]);
+    if (params.shuffled) return shuffle([...data]);
     else return data;
   }
 );

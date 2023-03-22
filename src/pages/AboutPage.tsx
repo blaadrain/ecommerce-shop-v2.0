@@ -27,9 +27,7 @@ const AboutPage: React.FC = () => {
         title="Our service isn’t just personal, it’s actually
         hyper personally exquisite"
         text="Sustainable interiors is not another home design trend, but a 
-        different mindset - pivoting the lifestyle altogether. It's the choices 
-        we make in an ongoing manner of living that will go towards better 
-        Earth for years to come."
+        different mindset - pivoting the lifestyle altogether."
         order="reversed"
         imgUrl="/images/about/02.jpg"
         element="button"
