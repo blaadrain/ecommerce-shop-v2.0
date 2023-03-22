@@ -1,4 +1,5 @@
 import React from 'react';
+import { useParams } from 'react-router';
 import About from '../sections/About';
 import Filters from '../sections/Filters';
 import Heading from '../sections/Heading';

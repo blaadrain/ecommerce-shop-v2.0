@@ -3,7 +3,11 @@ import '../scss/sections/Header.scss';
 import { categories } from '../constants';
 import { Link } from 'react-router-dom';
 
-const Header: React.FC = () => {
+type HeaderProps = {
+  cropped?: boolean;
+};
+
+const Header: React.FC<HeaderProps> = ({ cropped }) => {
   return (
     <header className="header">
       <div className="header__top">
@@ -43,21 +47,24 @@ const Header: React.FC = () => {
           />
         </nav>
       </div>
-      <div className="header__bottom">
-        <div className="header__links">
-          {categories.map((item, index) => {
-            if (item !== 'All')
-              return (
-                <li
-                  key={index}
-                  className="header__link"
-                >
-                  {item}
-                </li>
-              );
-          })}
+      {!cropped && (
+        <div className="header__bottom">
+          <div className="header__links">
+            {categories.map((item, index) => {
+              if (item !== 'All')
+                return (
+                  <Link
+                    to="/products"
+                    key={index}
+                    className="header__link"
+                  >
+                    {item}
+                  </Link>
+                );
+            })}
+          </div>
         </div>
-      </div>
+      )}
     </header>
   );
 };

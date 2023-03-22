@@ -1,12 +1,14 @@
 import React from 'react';
-import { Outlet } from 'react-router';
+import { Outlet, useLocation } from 'react-router';
 import Footer from '../sections/Footer';
 import Header from '../sections/Header';
 
 const Default: React.FC = () => {
+  const { pathname } = useLocation();
+
   return (
     <div className="App">
-      <Header />
+      <Header cropped={pathname !== '/'} />
       <Outlet />
       <Footer />
     </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import Input from '../components/UI/Input';
 import '../scss/sections/Footer.scss';
 import { categories, menu, info, footerIcons } from '../constants';
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   return (
@@ -24,12 +25,13 @@ const Footer: React.FC = () => {
             {categories.map((item, index) => {
               if (item !== 'All')
                 return (
-                  <li
+                  <Link
+                    to="/products"
                     key={index}
                     className="item"
                   >
                     {item}
-                  </li>
+                  </Link>
                 );
             })}
           </ul>

@@ -31,6 +31,10 @@ const App: React.FC = () => {
           element={<ProductsPage />}
         />
         <Route
+          path="products/:category"
+          element={<ProductsPage />}
+        />
+        <Route
           path="product/:id"
           element={<ProductPage />}
         />
